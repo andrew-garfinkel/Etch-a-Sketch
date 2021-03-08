@@ -1,0 +1,32 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#change-size{
+  width: 300px;
+  height: 100px;
+  background-color: lightgray;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#grid-container{
+  /* can always scale this down */
+  width: 960px;
+  height: 960px;
+  border: 2px solid;
+  display: grid;
+  /* grid-template-columns: repeat(4, 1fr); */
+}
+
+.grid-item{
+  border: 2px solid;
+}
+
+.red{
+  background-color: red;
+}
+
