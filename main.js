@@ -3,11 +3,13 @@
 const gridContainer = document.getElementById('grid-container')
 const changeSizeBtn = document.getElementById('change-size')
 const gridItems = document.getElementsByClassName('grid-item')
+const changeColorBtns = document.querySelectorAll('.change-color')
+const resetBtn = document.getElementById('reset')
 
 window.addEventListener('load', () =>
 {
-  createGridItems(3)
-  drawOnGrid(gridItems)
+  createGridItems(16)
+  drawOnGrid(gridItems, 'blue')
 })
 
 
@@ -38,20 +40,61 @@ function removeAllChildNodes(parent)
 function getGridSize()
 {
   let size = Number(prompt('please enter a desired grid size'))
-  // return size
+  if (size >= 65)
+  {
+    alert('Grid cannot be larger than 64 x 64')
+    return
+  }
+  console.log(size);
   removeAllChildNodes(gridContainer)
   createGridItems(size)
-  drawOnGrid(gridItems)
+  drawOnGrid(gridItems, 'blue')
 }
 
 
 changeSizeBtn.addEventListener('click', getGridSize)
 
-function drawOnGrid(gridItems)
+
+
+
+
+
+
+
+
+
+
+
+changeColorBtns.forEach((button) => button.addEventListener('click', () =>
 {
-  Array.from(gridItems).forEach((item, idx, array) => item.addEventListener('mouseover', () => { item.classList.add('red')}))
-  console.log('hello');
+  const color = button.textContent.toLowerCase();
+  console.log(color);
+  drawOnGrid(gridItems, color)
+}))
+
+
+function colorGridItem(item, color)
+{
+  item.className = `grid-item ${color}`
+}
+
+function drawOnGrid(gridItems, color)   //something not right about this function
+{
+  Array.from(gridItems).forEach((item) => item.addEventListener('mouseover', () =>
+  {
+    colorGridItem(item, color)
+    // item.style.backgroundColor = 'yellow'
+  }))
 }
 
 
-// Array.from(gridItems).forEach((item, idx, array) => item.addEventListener('mouseover', () => {console.log(item, idx, array);}))
+function clearGrid(gridItems)
+{
+  for (let i = 0; i < gridItems.length; i++)
+  {
+    gridItems[i].className = 'grid-item'
+  }
+}
+
+resetBtn.addEventListener('click', () => { clearGrid(gridItems) })
+// resetBtn.addEventListener('click', clearGrid(gridItems))

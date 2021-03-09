@@ -4,14 +4,18 @@
   padding: 0;
 }
 
-#change-size{
+#change-size, #reset, .change-color{
   width: 300px;
   height: 100px;
   background-color: lightgray;
   color: white;
   font-size: 2rem;
   cursor: pointer;
+  display: block;
+  margin: 15px;
 }
+
+
 
 #grid-container{
   /* can always scale this down */
@@ -30,3 +34,10 @@
   background-color: red;
 }
 
+.blue{
+  background-color: blue;
+}
+
+.yellow{
+  background-color: yellow;
+}
