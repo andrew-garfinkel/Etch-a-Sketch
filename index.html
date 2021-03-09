@@ -11,18 +11,50 @@
 </head>
 
 <body>
-  <button id="change-size">Change Size</button>
+  <h1>Etch-a-Sketch</h1>
+  <div id="etch-a-sketch-container">
+    <div id="button-container">
+      <button id="change-size">Change Size</button>
+      <button id="reset">Reset</button>
+      <!-- <button class="change-color">Red</button>
+      <button class="change-color">Blue</button>
+      <button class="change-color">Yellow</button> -->
+      <input type="text" name="" id="color-changer-input" placeholder="Enter color here">
+      <button id="color-changer-button">Draw with color!</button>
+    </div>
+
+    <input type="range" name="" id="range-slider" min="0" max="1" value="1" step="0.01">
+    <label for="" id="size-label">Grid Items Opacity : 1</label>
+    <p id="current-color-description"></p>
+
+
+    <div id="grid-container" class="grid-container-border">
+      <!-- <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div> -->
+
+    </div>
+    <button style="margin-top: 3rem;" id="toggle-borders">Toggle Grid Item Borders</button>
+  </div>
+
+
+  <!-- <button id="change-size">Change Size</button>
   <button id="reset">Reset</button>
   <button class="change-color">Red</button>
   <button class="change-color">Blue</button>
   <button class="change-color">Yellow</button>
+  <input type="text" name="" id="color-changer-input" placeholder="Enter color here">
+  <button id="color-changer-button">Draw with color!</button>
+  <p id="current-color-description"></p>
   <div id="grid-container">
-    <!-- <div class="grid-item"></div>
     <div class="grid-item"></div>
     <div class="grid-item"></div>
-    <div class="grid-item"></div> -->
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
 
-  </div>
+  </div> -->
+
 </body>
 
 </html>

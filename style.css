@@ -4,31 +4,124 @@
   padding: 0;
 }
 
-#change-size, #reset, .change-color{
-  width: 300px;
-  height: 100px;
-  background-color: lightgray;
-  color: white;
-  font-size: 2rem;
+@media (min-width: 1200px){
+  html{
+    font-size: 60%;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 768px){
+  html{
+    font-size: 62.5%;
+  }
+}
+
+@media (max-width: 768px){
+  html{
+    font-size: 50%;
+  }
+
+}
+
+@media (max-width: 576px){
+  html{
+    font-size: 40%;
+  }
+}
+
+@media (max-width: 425px){
+  html{
+    font-size: 30%;
+  }
+}
+
+
+
+
+#etch-a-sketch-container{
+  /* border: 2px solid; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  min-height: 70vh;
+  margin-top: 3rem;
+}
+
+#button-container{
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  padding: 2rem;
+}
+
+h1{
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 10rem;
+  background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#change-size, #reset, .change-color, #color-changer-button, input[type="text"], #toggle-borders, p{
+  width: 22rem;
+  height: 6rem;
+  font-size: 1.5rem;
+  margin: 0.5rem;
+}
+
+#change-size, #reset, .change-color, #color-changer-button, #toggle-borders{
+  /* background-color: lightgray; */
+  color: rgb(7, 6, 13);
+  border-radius: 5px;
+  font-weight: bold;
+  background: linear-gradient(to right, red,orange,yellow,violet);
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
   cursor: pointer;
   display: block;
-  margin: 15px;
+}
+
+input[type="text"]{
+  text-align: center;
+  border: 2px solid red;
+}
+
+p, #range-slider{
+  height: auto;
+  text-align: center;
+  width: 50rem;
+}
+
+#size-label{
+  font-size: 2rem
 }
 
 
 
 #grid-container{
   /* can always scale this down */
-  width: 960px;
-  height: 960px;
-  border: 2px solid;
+  /* width: 96rem;
+  height: 960px; */
+  width: 50rem;
+  height: 50rem;
+  /* border: 2px solid; */
   display: grid;
   /* grid-template-columns: repeat(4, 1fr); */
 }
 
-.grid-item{
-  border: 2px solid;
+.grid-container-border{
+  border: 2px solid black
 }
+
+/* .grid-item{
+  border: 2px solid;
+} */
+
+.grid-item-border{
+  border: 2px solid black;
+}
+/* this is how we are changing color */
 
 .red{
   background-color: red;
